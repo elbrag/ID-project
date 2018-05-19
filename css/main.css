@@ -1,0 +1,204 @@
+/*
+MARGINS AND PADDING: incremented by 5. Always check and build on what is already in place.
+*/
+
+/*General*/
+
+* {
+  font-family: 'Lato';
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #60C2F4;
+}
+
+main {
+  margin-top: 100px;
+}
+
+#loginbox {
+  margin: 0 auto;
+  padding: 50px 40px;
+  width: 100%;
+  background-color: #fff;
+}
+
+/*Menu*/
+
+header {
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+nav#main-menu {
+  overflow: hidden;
+  padding: 10px 20px;
+}
+
+#logocontainer {
+  float: left;
+}
+
+#logo {
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 40px;
+}
+
+#menuicon {
+  float: right;
+}
+
+#menusymbol {
+  background-image: url(../img/menu.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+}
+
+#menu-item-container {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  background-color: #fff;
+  position: relative;
+  top: 40px;
+  will-change: height, opacity;
+  transition: height 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+#menu-item-container.open {
+  visibility: visible;
+  height: 100vh;
+  opacity: 1;
+}
+
+ul#menu-items {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0;
+  height: 50vh;
+  position: absolute;
+  width: 100%;
+  top: 120px;
+  margin: 0;
+}
+
+ul#menu-items a {
+  text-decoration: none;
+  color: #222;
+}
+
+ul#menu-items li {
+  list-style: none;
+}
+
+#search-bar {
+  width: 280px;
+  height: 40px;
+  background-image: url(../img/search.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center right 10px;
+  box-shadow: inset 2px 3px 15px 3px rgba(0,0,0,0.15);
+  position: absolute;
+  top: 20px;
+  border-radius: 5px;
+}
+
+/*Registration*/
+
+/*Footer*/
+
+
+/*=====================================TABLET: 640PX========================================*/
+
+@media (min-width: 640px) {
+
+  main {
+    margin-top: 200px;
+  }
+
+  #loginbox {
+    padding: 50px 40px;
+    width: 85%;
+  }
+
+  #logo {
+    width: 240px;
+    height: 45px;
+  }
+
+}
+
+/*=====================================DESKTOP: 960PX========================================*/
+
+@media (min-width: 960px) {
+
+main {
+  margin-top: 250px;
+}
+
+#loginbox {
+  padding: 50px 40px;
+  width: 50%;
+}
+
+#logocontainer {
+  margin-top: 3px;
+}
+
+#logo {
+  width: 280px;
+  height: 50px;
+}
+
+  nav#main-menu {
+    padding: 20px 50px;
+    height: auto;
+  }
+
+  #menu-item-container {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    position: static;
+    float: right;
+    width: 65%;
+    max-width: 1000px;
+  }
+
+  #menuicon {
+    display: none;
+  }
+
+  ul#menu-items {
+    float: left;
+    flex-direction: row;
+    justify-content: space-between;
+    position: static;
+    padding: 0;
+    height: auto;
+    margin: 20px 0 12px 0;
+    width: 70%;
+    max-width: 600px;
+  }
+
+  #search-bar {
+    float: right;
+    position: static;
+    width: 25%;
+    height: 30px;
+    margin:  15px 0 15px 5%;
+  }
+
+}
