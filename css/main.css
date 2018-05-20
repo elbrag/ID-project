@@ -14,7 +14,7 @@ body {
 }
 
 main {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 h1, h2, h3, h4 {
@@ -70,8 +70,9 @@ nav#main-menu {
   background-image: url(../img/menu.png);
   background-repeat: no-repeat;
   background-size: contain;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
 }
 
 #menu-item-container {
@@ -133,6 +134,33 @@ ul li {
   border-radius: 5px;
 }
 
+/*form styling*/
+
+form {
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  padding: 5px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.buttoncontainer {
+  width: 60%;
+  margin: 0 auto;
+}
+
+input[type='submit'] {
+  width: 100%;
+  font-size: 1.2em;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
 /*Registration*/
 
 .register_steps {
@@ -146,17 +174,22 @@ ul li {
   padding: 15px 0;
   font-size: 1.2em;
   cursor: pointer;
-  margin: 5px 0;
 }
 
 .regstep_button.active {
   background-color: #60C2F4;
+  color: #fff;
 }
+
 
 .reg_content {
   visibility: hidden;
   opacity: 0;
+  width: 80%;
+  margin: 0 auto;
   height: 0;
+  will-change: height, opacity;
+  transition: height 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
 .reg_content.active {

@@ -38,51 +38,78 @@
 
       <div id='loginbox'>
 
-        <h1>Registration</h1>
+	        <h1>Registration</h1>
 
-        <ul class='register_steps'>
+					<form id='register' novalidate='novalidate'>
 
-          <li class='reg_step'>
-                <button class='regstep_button'>
-                  1. Country selection
-                </button>
+		        <ul class='register_steps'>
 
-                <div class='reg_content'>
-                  <p>Content for step 1</p>
-                </div>
-          </li>
+		          <li class='reg_step'>
 
-          <li class='reg_step'>
-              <button class='regstep_button'>
-                2. Validation
-              </button>
+		                <button class='regstep_button'>
+		                  1. Country selection
+		                </button>
 
-              <div class='reg_content'>
-                <p>Content for step 2</p>
-              </div>
-          </li>
+		                <div class='reg_content'>
+						            <label>Please select your country of work
+						              <select name='country' form='selectcountry' />
+															<option value="Sweden">Sweden</option>
+															<option value="Norway">Norway</option>
+															<option value="Denmark">Denmark</option>
+															<option value="Finland">Finland</option>
+													</select>
+						            </label>
+		                </div>
 
-          <li class='reg_step'>
-              <button class='regstep_button'>
-                3. Further information
-              </button>
+		          </li>
 
-              <div class='reg_content'>
-                <p>Content for step 3</p>
-              </div>
-          </li>
+		          <li class='reg_step'>
 
-          <li class='reg_step'>
-              <button class='regstep_button'>
-                4. Confirmation
-              </button>
+		              <button class='regstep_button'>
+		                2. Validation
+		              </button>
 
-              <div class='reg_content'>
-                <p>Content for step 4</p>
-              </div>
-          </li>
+		              <div class='reg_content'>
+											<p>Please fill in your details below</p>
+											<label>First name
+												<input type='text' />
+											</label>
+											<label>Last name
+												<input type='text' />
+											</label>
+		              </div>
 
-        </ul>
+		          </li>
+
+		          <li class='reg_step'>
+
+		              <button class='regstep_button'>
+		                3. Further information
+		              </button>
+
+		              <div class='reg_content'>
+		                <p>Please check that the following information is correct</p>
+		              </div>
+
+		          </li>
+
+		          <li class='reg_step'>
+
+		              <button class='regstep_button'>
+		                4. Confirmation
+		              </button>
+
+		              <div class='reg_content'>
+		                <p>Content for step 4</p>
+										<div class='buttoncontainer'>
+												<input type='submit' value='next step >' />
+										</div>
+		              </div>
+
+		          </li>
+
+		        </ul>
+				</form>
 
 
       </div>

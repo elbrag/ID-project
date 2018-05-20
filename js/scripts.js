@@ -29,9 +29,17 @@ $(document).ready(function() {
   var i;
   var regstep = $('.regstep_button');
 
+//By default the first step is open
+  $('.regstep_button:first').addClass('active');
+  $('.reg_content:first').addClass('active');
+
+
       for (i = 0; i < regstep.length; i++) {
 
         regstep[i].addEventListener("click", function() {
+
+          $('.regstep_button.active').removeClass('active');
+          $('.reg_content.active').removeClass('active');
 
           this.classList.toggle("active");
 
@@ -42,7 +50,7 @@ $(document).ready(function() {
           } else {
             content.classList.add('active');
           }
-          
+
         });
 
         }
