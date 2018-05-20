@@ -14,7 +14,6 @@ $(window).resize(function() {
 });
 
 
-
 $(document).ready(function() {
 
 
@@ -24,5 +23,30 @@ $(document).ready(function() {
     $('#menu-item-container').toggleClass('open');
 
   });
+
+
+//accordion for registration steps: https://www.w3schools.com/howto/howto_js_accordion.asp 20/5-2018
+  var i;
+  var regstep = $('.regstep_button');
+
+      for (i = 0; i < regstep.length; i++) {
+
+        regstep[i].addEventListener("click", function() {
+
+          this.classList.toggle("active");
+
+          var content = this.nextElementSibling;
+
+          if (content.classList.contains('active')){
+            content.classList.remove('active');
+          } else {
+            content.classList.add('active');
+          }
+          
+        });
+
+        }
+
+
 
 });

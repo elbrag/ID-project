@@ -17,11 +17,21 @@ main {
   margin-top: 100px;
 }
 
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 0 0 30px 0;
+}
+
 #loginbox {
   margin: 0 auto;
-  padding: 50px 40px;
   width: 100%;
   background-color: #fff;
+  padding: 20px 0;
 }
 
 /*Menu*/
@@ -85,7 +95,6 @@ ul#menu-items {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 0;
   height: 50vh;
   position: absolute;
   width: 100%;
@@ -93,12 +102,21 @@ ul#menu-items {
   margin: 0;
 }
 
-ul#menu-items a {
+ul {
+  padding: 0;
+}
+
+ul a {
   text-decoration: none;
   color: #222;
 }
 
-ul#menu-items li {
+ul#menu-items a.active {
+  color: #60C2F4;
+  font-weight: 900;
+}
+
+ul li {
   list-style: none;
 }
 
@@ -116,6 +134,36 @@ ul#menu-items li {
 }
 
 /*Registration*/
+
+.register_steps {
+  margin: 0;
+}
+
+.reg_step button {
+  width: 100%;
+  background-color: #eee;
+  border: none;
+  padding: 15px 0;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.regstep_button.active {
+  background-color: #60C2F4;
+}
+
+.reg_content {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+
+.reg_content.active {
+  visibility: visible;
+  opacity: 1;
+  height: 300px;
+}
 
 /*Footer*/
 
