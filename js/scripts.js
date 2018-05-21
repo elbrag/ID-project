@@ -36,7 +36,10 @@ $(document).ready(function() {
 
         regstep.click(openAcc);
 
-        function openAcc(){
+        function openAcc(e){
+
+          e.preventDefault();
+
           $('.regstep_button.active').removeClass('active');
           $('.reg_content.active').removeClass('active');
 
@@ -54,7 +57,9 @@ $(document).ready(function() {
     var prevbut = $('.prevstep');
     var nextbut = $('.nextstep');
 
-    prevbut.on('click', function(){
+    prevbut.on('click', function(e){
+
+      e.preventDefault();
 
       $('.regstep_button.active').removeClass('active');
       $('.reg_content.active').removeClass('active');
@@ -69,7 +74,9 @@ $(document).ready(function() {
 
     });
 
-    nextbut.on('click', function(){
+    nextbut.on('click', function(e){
+
+      e.preventDefault();
 
       $('.regstep_button.active').removeClass('active');
       $('.reg_content.active').removeClass('active');
