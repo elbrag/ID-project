@@ -251,6 +251,25 @@ li.latest-item{
   margin-top: 15px;
 
 }
+
+.eLearning h3 {
+  float:left;
+  display:inline-block;
+  width:250px;
+}
+
+.eLearning p {
+  clear:left;
+}
+
+.trash {
+  float:left;
+  display:inline-block;
+  width:30px;
+  height:30px;
+  margin-top:15px;
+}
+
 /*=====================================TABLET: 640PX========================================*/
 
 @media (min-width: 640px) {
