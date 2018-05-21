@@ -244,10 +244,11 @@ div.mypagelatest-container{
 }
 ul.latest{}
 li.latest-item{
-  background-color: #eeeeee;
+  background-color: white;
   border-radius: 2px;
   border-left: 2px #333333;
   padding: 15px;
+  margin-top: 15px;
 
 }
 /*=====================================TABLET: 640PX========================================*/
