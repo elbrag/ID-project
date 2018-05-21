@@ -34,10 +34,9 @@ $(document).ready(function() {
   $('.reg_content:first').addClass('active');
 
 
-      for (i = 0; i < regstep.length; i++) {
+        regstep.click(openAcc);
 
-        regstep[i].addEventListener("click", function() {
-
+        function openAcc(){
           $('.regstep_button.active').removeClass('active');
           $('.reg_content.active').removeClass('active');
 
@@ -50,10 +49,40 @@ $(document).ready(function() {
           } else {
             content.classList.add('active');
           }
-
-        });
-
         }
+
+    var prevbut = $('.prevstep');
+    var nextbut = $('.nextstep');
+
+    prevbut.on('click', function(){
+
+      $('.regstep_button.active').removeClass('active');
+      $('.reg_content.active').removeClass('active');
+
+      var parent = this.parentElement.parentElement.parentElement;
+      var prevParent = parent.previousElementSibling;
+      var prevheading = prevParent.children[0];
+      var prevcontent = prevParent.children[1];
+
+      prevheading.classList.add('active');
+      prevcontent.classList.add('active');
+
+    });
+
+    nextbut.on('click', function(){
+
+      $('.regstep_button.active').removeClass('active');
+      $('.reg_content.active').removeClass('active');
+
+      var parent = this.parentElement.parentElement.parentElement;
+      var nextParent = parent.nextElementSibling;
+      var nextheading = nextParent.children[0];
+      var nextcontent = nextParent.children[1];
+
+      nextheading.classList.add('active');
+      nextcontent.classList.add('active');
+
+    });
 
 
 
