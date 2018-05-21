@@ -91,6 +91,12 @@ $(document).ready(function() {
 
     });
 
+//remove bookmark click trashcan
+      $('.trash').on('click', function(){
+      var trashparent = this.parentElement.parentElement;
+      trashparent.remove();
+
+      });
 
 
 });

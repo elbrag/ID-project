@@ -208,9 +208,14 @@ input[type='submit'] {
 /* My Page */
 div.mypage-container{
   margin: 200px auto 0 auto;
-  max-width: 400px;
+  width: 400px;
   height: auto;
   overflow: hidden;
+}
+
+.mypage-container a{
+  text-decoration: none;
+  color:black;
 }
 
 /* My Page Options  */
@@ -230,7 +235,7 @@ ul.mypagelink>li{
   border-radius: 2px;
   box-shadow: 1px 1px rgba(51,51,51, 0.2);
 }
-ul.mypagelink>li:first-child{
+ul.mypagelink:first-child{
   margin-left: none;
 }
 
@@ -255,7 +260,7 @@ li.latest-item{
 .eLearning h3 {
   float:left;
   display:inline-block;
-  width:250px;
+  width:280px;
 }
 
 .eLearning p {
@@ -287,6 +292,34 @@ li.latest-item{
     width: 240px;
     height: 45px;
   }
+
+  div.mypage-container{
+    width: 640px;
+  }
+
+  ul.mypagelink{
+    width:640px;
+  }
+
+  ul.mypagelink>li{
+    width: 100px;
+    height:100px;
+  }
+
+  ul.mypagelink>li + li{
+    padding: 30px 0;
+    margin-left: 25px;
+  }
+
+div.mypagelatest-container{
+    max-width: 600px;
+    padding:0px;
+  }
+
+.eLearning h3 {
+    width:500px;
+  }
+
 
 }
 
@@ -349,6 +382,36 @@ main {
     width: 25%;
     height: 30px;
     margin:  15px 0 15px 5%;
+  }
+
+  div.mypage-container{
+    width: 960px;
+    margin:0 auto;
+  }
+
+  ul.mypagelink{
+    width:960px;
+    margin:0 auto;
+  }
+
+  ul.mypagelink>li{
+    width: 150px;
+    height:150px;
+    box-sizing: border-box;
+  }
+
+  ul.mypagelink>li + li{
+    padding: 30px 0;
+    margin-left: 40px;
+  }
+
+div.mypagelatest-container{
+    max-width: 800px;
+    margin:0 auto;
+  }
+
+.eLearning h3 {
+    width:680px;
   }
 
 }
