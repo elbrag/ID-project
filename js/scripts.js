@@ -65,6 +65,7 @@ $(document).ready(function() {
       getStep(e, this, "next");
     });
 
+//the function that runs after clicking the next/prev buttons
     function getStep(e, element, which) {
 
       e.preventDefault();
