@@ -91,7 +91,7 @@ $(document).ready(function() {
 
 
 //remove bookmark click trashcan
-// @FREDRIK
+// @FREDRIK - here we are trying to animate the removing of the clicked elearning with either a delay or fadeOut but it doesn't work
       $('.trash').on('click', function(){
         // $(".last-item").addClass("fadeout");
         // function sleep (miliseconds){
@@ -110,7 +110,7 @@ $(document).ready(function() {
 
       });
 
-      // @FREDRIK
+      // @FREDRIK -- here we want to slide the divs left or right depending on the arrow clicked but it only works once for one arrow the you have to refresh the page. Why?
       //slide links on arrow clicked
       $("a.arrow-right").on("click", function(e) {
         $(".mypagelink").addClass("slide-right");
