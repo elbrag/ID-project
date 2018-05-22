@@ -219,11 +219,47 @@ div.mypage-container{
 }
 
 /* My Page Options  */
+div.mypagelink-container{
+  position: relative;
+  width: 100%;
+}
+/* My page icons */
+i.fas.fa-angle-left{
+  position: absolute;
+  top: calc(50% - 13px);
+  left: 0px;
+  font-size: 26px;
+  z-index: 100;
+}
+i.fas.fa-angle-right{
+  position: absolute;
+  top: calc(50% - 13px);
+  right: 0px;
+  font-size: 26px;
+  z-index: 100;
+}
+
+
+
+
+/* my page links */
 ul.mypagelink{
   width: 700px;
   overflow: hidden;
+  /* transform: translateX(0px); */
 }
-ul.mypagelink>li{
+
+.slide-left{
+	transition: transform 0.2s ease-out;
+	transform: translateX(100px);
+}
+
+.slide-right{
+	transition: transform 0.2s ease-out;
+	transform: translateX(-100px);
+}
+
+ul.mypagelink>a>li{
   float: left;
   width: 100px;
   height: 100px;
@@ -247,7 +283,8 @@ div.mypagelatest-container{
   max-width: 400px;
   height:auto;
 }
-ul.latest{}
+ul.latest{
+}
 li.latest-item{
   background-color: white;
   border-radius: 2px;
@@ -256,6 +293,10 @@ li.latest-item{
   margin-top: 15px;
 
 }
+
+
+
+
 
 .eLearning h3 {
   float:left;
@@ -273,6 +314,11 @@ li.latest-item{
   width:30px;
   height:30px;
   margin-top:15px;
+}
+
+li.bookmarks1{
+  border: 2px solid #1B9CE5 !important;
+  background-color: white !important;
 }
 
 /*=====================================TABLET: 640PX========================================*/
@@ -301,12 +347,12 @@ li.latest-item{
     width:640px;
   }
 
-  ul.mypagelink>li{
+  ul.mypagelink>a>li{
     width: 100px;
     height:100px;
   }
 
-  ul.mypagelink>li + li{
+  ul.mypagelink>a>li + li{
     padding: 30px 0;
     margin-left: 25px;
   }
@@ -394,13 +440,13 @@ main {
     margin:0 auto;
   }
 
-  ul.mypagelink>li{
+  ul.mypagelink>a>li{
     width: 150px;
     height:150px;
     box-sizing: border-box;
   }
 
-  ul.mypagelink>li + li{
+  ul.mypagelink>a>li + li{
     padding: 30px 0;
     margin-left: 40px;
   }

@@ -97,5 +97,12 @@ $(document).ready(function() {
 
       });
 
+      //slide links on arrow clicked
+      $("a.arrow-right").on("click", function(e) {
+        $(".mypagelink").addClass("slide-right");
+      });
 
+      $("a.arrow-left").on("click", function(e) {
+        $(".mypagelink").addClass("slide-left");
+      });
 });
