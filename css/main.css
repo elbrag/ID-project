@@ -329,8 +329,8 @@ li.latest-item{
 }
 
 li.bookmarks1{
-  border: 2px solid #1B9CE5;
-  background-color: white;
+  border: 2px solid #1B9CE5 !important;
+  background-color: white !important;
 }
 
 /*=====================================TABLET: 640PX========================================*/
