@@ -105,8 +105,8 @@ $(document).ready(function() {
         // setTimeout (sleep, 2000);
 
         var trashparent = this.parentElement.parentElement;
-        trashparent.remove();
-        // trashparent.fadeOut(300,function(){$(this).remove();});
+        // trashparent.remove();
+        trashparent.fadeOut(300,function(){$(this).remove();});
 
       });
 
