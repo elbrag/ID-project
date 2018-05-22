@@ -91,7 +91,7 @@ $(document).ready(function() {
 
 
 //remove bookmark click trashcan
-// @FREDRIK - here we are trying to animate the removing of the clicked elearning with either a delay or fadeOut but it doesn't work
+// @FREDRIK - here we are trying to animate the removing of the clicked elearning with either a delay or fadeOut but it doesn't work -- seems to work now with jQuery infront, not really sure why I need that
       $('.trash').on('click', function(){
         // $(".last-item").addClass("fadeout");
         // function sleep (miliseconds){
@@ -106,8 +106,8 @@ $(document).ready(function() {
 
         var trashparent = this.parentElement.parentElement;
         // trashparent.remove();
-        trashparent.fadeOut(300,function(){$(this).remove();});
-
+        //trashparent.fadeOut(300,function(){$(this).remove();});
+        jQuery(trashparent).fadeOut(300);
       });
 
       // @FREDRIK -- here we want to slide the divs left or right depending on the arrow clicked but it only works once for one arrow the you have to refresh the page. Why?

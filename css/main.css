@@ -212,12 +212,12 @@ input[type='submit'] {
 /* animations */
 .slide-left{
 	transition: transform 0.2s ease-out;
-	transform: translateX(100px);
+	transform: translateX(-100px);
 }
 
 .slide-right{
 	transition: transform 0.2s ease-out;
-	transform: translateX(-100px);
+	transform: translateX(100px);
 }
 
 .fadeout{
@@ -379,7 +379,13 @@ div.mypagelatest-container{
     width:500px;
   }
 
+.arrow-left {
+  display:none;
+}
 
+.arrow-right {
+  display:none;
+}
 }
 
 /*=====================================DESKTOP: 960PX========================================*/
