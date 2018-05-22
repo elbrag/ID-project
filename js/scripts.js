@@ -91,12 +91,26 @@ $(document).ready(function() {
 
 
 //remove bookmark click trashcan
+// @FREDRIK
       $('.trash').on('click', function(){
-      var trashparent = this.parentElement.parentElement;
-      trashparent.remove();
+        // $(".last-item").addClass("fadeout");
+        // function sleep (miliseconds){
+        //   var start = new Date().getTime();
+        //   for (var i=0; i < 1e7; i++){
+        //     if((new Date().getTime()- start) > miliseconds){
+        //       break
+        //     }
+        //   }
+        // }
+        // setTimeout (sleep, 2000);
+
+        var trashparent = this.parentElement.parentElement;
+        trashparent.remove();
+        // trashparent.fadeOut(300,function(){$(this).remove();});
 
       });
 
+      // @FREDRIK
       //slide links on arrow clicked
       $("a.arrow-right").on("click", function(e) {
         $(".mypagelink").addClass("slide-right");

@@ -206,6 +206,26 @@ input[type='submit'] {
 
 
 /* My Page */
+
+/* @FREDRIK */
+/* animations */
+.slide-left{
+	transition: transform 0.2s ease-out;
+	transform: translateX(100px);
+}
+
+.slide-right{
+	transition: transform 0.2s ease-out;
+	transform: translateX(-100px);
+}
+
+.fadeout{
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+
+/* my page  */
 div.mypage-container{
   margin: 200px auto 0 auto;
   width: 400px;
@@ -229,19 +249,19 @@ i.fas.fa-angle-left{
   top: calc(50% - 13px);
   left: 0px;
   font-size: 26px;
-  z-index: 100;
+  z-index: 10;
 }
 i.fas.fa-angle-right{
   position: absolute;
   top: calc(50% - 13px);
   right: 0px;
   font-size: 26px;
-  z-index: 100;
+  z-index: 10;
 }
 
 
 
-
+/* @FREDRIK */
 /* my page links */
 ul.mypagelink{
   width: 700px;
@@ -249,15 +269,7 @@ ul.mypagelink{
   /* transform: translateX(0px); */
 }
 
-.slide-left{
-	transition: transform 0.2s ease-out;
-	transform: translateX(100px);
-}
 
-.slide-right{
-	transition: transform 0.2s ease-out;
-	transform: translateX(-100px);
-}
 
 ul.mypagelink>a>li{
   float: left;
@@ -291,7 +303,7 @@ li.latest-item{
   border-left: 2px #333333;
   padding: 15px;
   margin-top: 15px;
-
+  opacity: 1;
 }
 
 
@@ -317,8 +329,8 @@ li.latest-item{
 }
 
 li.bookmarks1{
-  border: 2px solid #1B9CE5 !important;
-  background-color: white !important;
+  border: 2px solid #1B9CE5;
+  background-color: white;
 }
 
 /*=====================================TABLET: 640PX========================================*/
