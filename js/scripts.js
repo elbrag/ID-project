@@ -58,38 +58,36 @@ $(document).ready(function() {
     var nextbut = $('.nextstep');
 
     prevbut.on('click', function(e){
-
-      e.preventDefault();
-
-      $('.regstep_button.active').removeClass('active');
-      $('.reg_content.active').removeClass('active');
-
-      var parent = this.parentElement.parentElement.parentElement;
-      var prevParent = parent.previousElementSibling;
-      var prevheading = prevParent.children[0];
-      var prevcontent = prevParent.children[1];
-
-      prevheading.classList.add('active');
-      prevcontent.classList.add('active');
-
+      getStep(e, this, "prev");
     });
 
     nextbut.on('click', function(e){
+      getStep(e, this, "next");
+    });
+
+    function getStep(e, element, which) {
 
       e.preventDefault();
 
       $('.regstep_button.active').removeClass('active');
       $('.reg_content.active').removeClass('active');
 
-      var parent = this.parentElement.parentElement.parentElement;
-      var nextParent = parent.nextElementSibling;
-      var nextheading = nextParent.children[0];
-      var nextcontent = nextParent.children[1];
+      var parent = element.closest('li');
+      var sibling = parent.previousElementSibling;
 
-      nextheading.classList.add('active');
-      nextcontent.classList.add('active');
+      if (which == 'next') {
+        sibling = parent.nextElementSibling;
+      }
 
-    });
+      var heading = sibling.querySelectorAll('button')[0];
+      var content = sibling.querySelectorAll('.reg_content')[0];
+
+
+      heading.classList.add('active');
+      content.classList.add('active');
+
+    }
+
 
 //remove bookmark click trashcan
       $('.trash').on('click', function(){
