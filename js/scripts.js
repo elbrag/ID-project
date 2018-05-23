@@ -30,6 +30,9 @@ $(document).ready(function() {
   var regstep = $('.reg_step');
   var regstep_button = $('.regstep_button');
 
+
+  var regstep_button_noclick = $('.noclick');
+
 //By default the first step is open
   regstep.first().addClass('active');
 
@@ -40,8 +43,42 @@ $(document).ready(function() {
     function openAcc(e){
 
           e.preventDefault();
-          regstep.removeClass('active');
-          this.closest('li').classList.toggle("active");
+          //prevent to click step 3 if no fill
+          if(regstep_button.hasClass("noclick")){
+            e.preventDefault();
+            var error = false;
+            field.removeClass("error");
+
+            field.each(function() {
+              var fieldval = $(this).val();
+              if( fieldval == undefined || fieldval == null || fieldval == "" )  {
+                $('.reg_step.active').removeClass('active');
+                $('#step_2').addClass('active');
+                $(this).addClass("error");
+                error = true;
+              }
+            });
+
+            field.click(function() {
+              if ($(this).hasClass('error')) {
+                $(this).blur( function() {
+                    $(this).removeClass("error");
+                });
+              };
+            });
+
+            if (error == false) {
+              $('.regstep_button').removeClass('noclick');
+              getStep(e, this, "next");
+            }else{
+
+            }
+
+          }else{
+            regstep.removeClass('active');
+            this.closest('li').classList.toggle("active");
+          }
+
 
       }
 
@@ -57,7 +94,7 @@ $(document).ready(function() {
         getStep(e, this, "next");
     });
 
-// validate on validation button
+// validate on validation button to prevent next step if form not filled out
 var valbut = $('.validate');
 valbut.on('click', function(e){
   e.preventDefault();
@@ -67,30 +104,27 @@ valbut.on('click', function(e){
   field.each(function() {
     var fieldval = $(this).val();
     if( fieldval == undefined || fieldval == null || fieldval == "" )  {
+      $('.reg_step.active').removeClass('active');
+      $('#step_2').addClass('active');
+      $(this).addClass("error");
+      error = true;
+    }
+  });
 
-              $('.reg_step.active').removeClass('active');
-              $('#step_2').addClass('active');
-              $(this).addClass("error");
+  field.click(function() {
+    if ($(this).hasClass('error')) {
+      $(this).blur( function() {
+          $(this).removeClass("error");
+      });
+    };
+  });
 
-              error = true;
-            }
-          });
+  if (error == false) {
+    $('.regstep_button').removeClass('noclick');
+    getStep(e, this, "next");
+  }else{
 
-          field.click(function() {
-            if ($(this).hasClass('error')) {
-
-              $(this).blur( function() {
-
-                  $(this).removeClass("error");
-
-              });
-            };
-          });
-
-          if (error == false) {
-            getStep(e, this, "next");
-          }
-
+  }
 });
 
 //the function that runs after clicking the next/prev buttons
@@ -151,7 +185,6 @@ $("#register").submit( function(e) {
         });
 
         if (error == false) {
-
           $('.reg_step.active').removeClass('active');
           $('#step_4').addClass('active');
 
