@@ -27,32 +27,23 @@ $(document).ready(function() {
 
 //accordion for registration steps: https://www.w3schools.com/howto/howto_js_accordion.asp 20/5-2018
   var i;
-  var regstep = $('.regstep_button');
+  var regstep = $('.reg_step');
+  var regstep_button = $('.regstep_button');
 
 //By default the first step is open
-  $('.regstep_button:first').addClass('active');
-  $('.reg_content:first').addClass('active');
+  regstep.first().addClass('active');
 
 
-        regstep.click(openAcc);
 
-        function openAcc(e){
+  regstep_button.click(openAcc);
+
+    function openAcc(e){
 
           e.preventDefault();
+          regstep.removeClass('active');
+          this.closest('li').classList.toggle("active");
 
-          $('.regstep_button.active').removeClass('active');
-          $('.reg_content.active').removeClass('active');
-
-          this.classList.toggle("active");
-
-          var content = this.nextElementSibling;
-
-          if (content.classList.contains('active')){
-            content.classList.remove('active');
-          } else {
-            content.classList.add('active');
-          }
-        }
+      }
 
     var prevbut = $('.prevstep');
     var nextbut = $('.nextstep');
@@ -70,8 +61,7 @@ $(document).ready(function() {
 
       e.preventDefault();
 
-      $('.regstep_button.active').removeClass('active');
-      $('.reg_content.active').removeClass('active');
+      $('.reg_step.active').removeClass('active');
 
       var parent = element.closest('li');
       var sibling = parent.previousElementSibling;
@@ -80,12 +70,7 @@ $(document).ready(function() {
         sibling = parent.nextElementSibling;
       }
 
-      var heading = sibling.querySelectorAll('button')[0];
-      var content = sibling.querySelectorAll('.reg_content')[0];
-
-
-      heading.classList.add('active');
-      content.classList.add('active');
+      sibling.classList.add('active');
 
     }
 
@@ -99,6 +84,8 @@ var field = $('#register').find("*[required]");
 $("#register").submit( function(e) {
   e.preventDefault();
 
+  var error = false;
+
   field.removeClass("error");
 
   field.each(function() {
@@ -110,6 +97,8 @@ $("#register").submit( function(e) {
             $('.reg_step.active').removeClass('active');
             $('#step_2').addClass('active');
             $(this).addClass("error");
+
+            error = true;
           }
         });
 
@@ -123,6 +112,19 @@ $("#register").submit( function(e) {
             });
           };
         });
+
+        if (error == false) {
+
+          $('.reg_step.active').removeClass('active');
+          $('#step_4').addClass('active');
+
+          window.setTimeout(function(){
+
+              window.location.href = "mypage.html";
+
+          }, 3000);
+
+        }
 
 });
 
