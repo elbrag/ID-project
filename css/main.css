@@ -286,7 +286,7 @@ div.confirm_button{
 
 /* my page  */
 div.mypage-container{
-  margin: 200px auto 0 auto;
+  margin: 200px 50px 0 50px;
   width: 400px;
   height: auto;
   overflow: hidden;
@@ -321,12 +321,12 @@ i.fas.fa-angle-right{
 
 
 /* @FREDRIK */
-/* my page links */
+/* my page links
 ul.mypagelink{
   width: 700px;
   overflow: hidden;
-  /* transform: translateX(0px); */
-}
+  /* transform: translateX(0px);
+} */
 
 
 
@@ -336,20 +336,17 @@ ul.mypagelink>a>li{
   height: 100px;
   padding: 30px 0;
   box-sizing: border-box;
-  margin-left: 20px;
+  margin-right: 20px;
   background-color: #1B9CE5;
   text-align: center;
   border-radius: 2px;
   box-shadow: 1px 1px rgba(51,51,51, 0.2);
 }
-ul.mypagelink:first-child{
-  margin-left: none;
-}
+
 
 /* My Page Latest News */
 div.mypagelatest-container{
-  margin: 60px auto 0 auto;
-  padding: 25px;
+  margin: 60px 50px;
   width: 100%;
   max-width: 400px;
   height:auto;
@@ -509,12 +506,11 @@ main {
 
   div.mypage-container{
     width: 960px;
-    margin:0 auto;
+
   }
 
   ul.mypagelink{
-    width:960px;
-    margin:0 auto;
+
   }
 
   ul.mypagelink>a>li{
@@ -530,7 +526,7 @@ main {
 
 div.mypagelatest-container{
     max-width: 800px;
-    margin:0 auto;
+
   }
 
 .eLearning h3 {
