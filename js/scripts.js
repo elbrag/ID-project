@@ -149,22 +149,8 @@ $("#register").submit( function(e) {
 
 
 //remove bookmark click trashcan
-// @FREDRIK - here we are trying to animate the removing of the clicked elearning with either a delay or fadeOut but it doesn't work -- seems to work now with jQuery infront, not really sure why I need that
       $('.trash').on('click', function(){
-        // $(".last-item").addClass("fadeout");
-        // function sleep (miliseconds){
-        //   var start = new Date().getTime();
-        //   for (var i=0; i < 1e7; i++){
-        //     if((new Date().getTime()- start) > miliseconds){
-        //       break
-        //     }
-        //   }
-        // }
-        // setTimeout (sleep, 2000);
-
         var trashparent = this.parentElement.parentElement;
-        // trashparent.remove();
-        //trashparent.fadeOut(300,function(){$(this).remove();});
         jQuery(trashparent).fadeOut(300);
       });
 
