@@ -48,25 +48,50 @@ $(document).ready(function() {
     var prevbut = $('.prevstep');
     var nextbut = $('.nextstep');
 
+
     prevbut.on('click', function(e){
       getStep(e, this, "prev");
     });
 
     nextbut.on('click', function(e){
-      field.removeClass("error");
-      var fieldval = $(this).val();
-      if( fieldval == undefined || fieldval == null || fieldval == "" )  {
-
-        $('.reg_step.active').removeClass('active');
-        $('#step_2').addClass('active');
-        $(this).addClass("error");
-
-        error = true;
-
-      }else{
-        getStep(e, this, "prev");
-      }
+        getStep(e, this, "next");
     });
+
+// validate on validation button
+var valbut = $('.validate');
+valbut.on('click', function(e){
+  e.preventDefault();
+  var error = false;
+  field.removeClass("error");
+
+  field.each(function() {
+    var fieldval = $(this).val();
+    if( fieldval == undefined || fieldval == null || fieldval == "" )  {
+
+              $('.reg_step.active').removeClass('active');
+              $('#step_2').addClass('active');
+              $(this).addClass("error");
+
+              error = true;
+            }
+          });
+
+          field.click(function() {
+            if ($(this).hasClass('error')) {
+
+              $(this).blur( function() {
+
+                  $(this).removeClass("error");
+
+              });
+            };
+          });
+
+          if (error == false) {
+            getStep(e, this, "next");
+          }
+
+});
 
 //the function that runs after clicking the next/prev buttons
     function getStep(e, element, which) {
