@@ -28,6 +28,10 @@ h1 {
   margin: 0 0 30px 0;
 }
 
+p {
+  margin: 0;
+}
+
 #loginbox {
   margin: 0 auto;
   width: 100%;
@@ -152,6 +156,18 @@ input[type='password'] {
   width: 100%;
 }
 
+.value_labels {
+  float: left;
+  font-weight: bold;
+  width: 100px;
+}
+
+.typed_values {
+  float: left;
+  clear: right;
+  margin-left: 30px;
+}
+
 .buttoncontainer {
   width: 60%;
   margin: 0 auto;
@@ -164,6 +180,27 @@ input[type='submit'] {
   padding: 10px 0;
   cursor: pointer;
   text-transform: uppercase;
+}
+
+input[type='text'].error {
+	background-color: rgba(255, 0, 0, 0.2);
+	border: 1px solid red;
+	background-image: url(../img/error-icon.png);
+	background-repeat: no-repeat;
+	background-size: 5%;
+	background-position: right 12px center;
+}
+
+.errormessage {
+	color: red;
+	max-height: 0;
+	overflow: hidden;
+	font-size: 0.8em;
+	transition: max-height 0.2s ease-out;
+}
+
+.error + .errormessage {
+	max-height: 22px;
 }
 
 /*Registration*/
@@ -193,14 +230,15 @@ input[type='submit'] {
   width: 80%;
   margin: 0 auto;
   max-height: 0;
-  will-change: max-height, opacity;
-  transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  will-change: max-height, opacity, margin;
+  transition: max-height 0.1s ease-in-out, opacity 0.6s ease-in-out, margin 0.2s ease-in-out;
 }
 
 .reg_content.active {
   visibility: visible;
   opacity: 1;
   max-height: 1000px;
+  margin: 55px auto;
 }
 
 /*Footer*/

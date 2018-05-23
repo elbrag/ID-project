@@ -46,7 +46,7 @@
 
 		        <ul class='register_steps'>
 
-		          <li class='reg_step'>
+		          <li class='reg_step' id='step_1'>
 
 		                <button class='regstep_button'>
 		                  1. Country selection
@@ -69,7 +69,7 @@
 
 		          </li>
 
-		          <li class='reg_step'>
+		          <li class='reg_step' id='step_2'>
 
 		              <button class='regstep_button'>
 		                2. Validation
@@ -78,10 +78,20 @@
 		              <div class='reg_content'>
 											<p>Please fill in your details below</p>
 											<label>First name
-												<input type='text' />
+												<input type='text' id='firstname' required='required' />
+												<div class='errormessage'>Please enter your first name</div>
 											</label>
 											<label>Last name
-												<input type='text' />
+												<input type='text' id='lastname' required='required' />
+												<div class='errormessage'>Please enter your last name</div>
+											</label>
+											<label>City
+												<input type='text' id='city' required='required' />
+												<div class='errormessage'>Please enter your city</div>
+											</label>
+											<label>Workplace
+												<input type='text' id='workplace' required='required' />
+												<div class='errormessage'>Please enter your workplace</div>
 											</label>
 
 											<div class='buttoncontainer'>
@@ -93,14 +103,23 @@
 
 		          </li>
 
-		          <li class='reg_step'>
+		          <li class='reg_step' id='step_3'>
 
 		              <button class='regstep_button'>
 		                3. Further information
 		              </button>
 
 		              <div class='reg_content'>
-		                <p>Please check that the following information is correct</p>
+		                <p>Please check that the following information is correct</p><br /><br />
+										<p class='value_labels'>First name</p> <p class='typed_values' id='firstname_val'></p><br />
+										<p class='value_labels'>Last name</p> <p class='typed_values' id='lastname_val'></p><br />
+										<p class='value_labels'>City</p> <p class='typed_values' id='city_val'></p><br />
+										<p class='value_labels'>Workplace</p> <p class='typed_values' id='workplace_val'></p><br /><br /><br />
+
+										<div class='checkinfo'>
+
+
+										</div>
 
 										<div class='buttoncontainer'>
 											<button class='prevstep'>< previous step</button>
@@ -111,7 +130,7 @@
 
 		          </li>
 
-		          <li class='reg_step'>
+		          <li class='reg_step' id='step_4'>
 
 		              <button class='regstep_button'>
 		                4. Confirmation

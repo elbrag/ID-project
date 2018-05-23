@@ -90,6 +90,62 @@ $(document).ready(function() {
     }
 
 
+//REGISTRATION FORM STUFF ---------------------------------------------------//
+
+var field = $('#register').find("*[required]");
+
+//JS validation of registration form
+
+$("#register").submit( function(e) {
+  e.preventDefault();
+
+  field.removeClass("error");
+
+  field.each(function() {
+
+    var fieldval = $(this).val();
+
+          if( fieldval == undefined || fieldval == null || fieldval == "" )  {
+
+            $('.reg_step.active').removeClass('active');
+            $('#step_2').addClass('active');
+            $(this).addClass("error");
+          }
+        });
+
+        field.click(function() {
+          if ($(this).hasClass('error')) {
+
+            $(this).blur( function() {
+
+                $(this).removeClass("error");
+
+            });
+          };
+        });
+
+});
+
+
+//taking inputs from the register form fields and displaying them for the user to review
+
+    field.blur(function() {
+
+      var fieldname = $(this).attr('id');
+      var fieldval = $(this).val();
+
+      if ( fieldval != undefined || fieldval != null || fieldval != "" ) {
+
+        var thefield = document.getElementById(fieldname+"_val");
+        thefield.innerHTML = "";
+        thefield.append(fieldval);
+
+      }
+
+    });
+
+
+
 //remove bookmark click trashcan
 // @FREDRIK - here we are trying to animate the removing of the clicked elearning with either a delay or fadeOut but it doesn't work -- seems to work now with jQuery infront, not really sure why I need that
       $('.trash').on('click', function(){
