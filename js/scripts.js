@@ -53,7 +53,20 @@ $(document).ready(function() {
     });
 
     nextbut.on('click', function(e){
-      getStep(e, this, "next");
+      // Step 3, prevent from getting to next step without all fields filled in
+      field.removeClass("error");
+      var fieldval = $(this).val();
+      if( fieldval == undefined || fieldval == null || fieldval == "" )  {
+
+        $('.reg_step.active').removeClass('active');
+        $('#step_2').addClass('active');
+        $(this).addClass("error");
+
+        error = true;
+
+      }else{
+        getStep(e, this, "prev");
+      }
     });
 
 //the function that runs after clicking the next/prev buttons
