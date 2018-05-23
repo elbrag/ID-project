@@ -209,7 +209,7 @@ input[type='text'].error {
   margin: 0;
 }
 
-.regstep_button, .nextstep, .prevstep {
+.regstep_button, .nextstep, .prevstep, .confirm_button {
   width: 100%;
   background-color: #eee;
   border: none;
@@ -234,11 +234,15 @@ input[type='text'].error {
   transition: max-height 0.1s ease-in-out, opacity 0.6s ease-in-out, margin 0.2s ease-in-out;
 }
 
-.reg_step.active .reg_content {
+.reg_step.active .reg_content, .confirm_step.active .reg_content{
   visibility: visible;
   opacity: 1;
   max-height: 1000px;
   margin: 55px auto;
+}
+
+div.confirm_button{
+  text-align: center;
 }
 
 /*loading wheel taken from https://www.w3schools.com/howto/howto_css_loader.asp 23/5-2018*/

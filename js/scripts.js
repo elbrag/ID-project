@@ -30,7 +30,6 @@ $(document).ready(function() {
   var regstep = $('.reg_step');
   var regstep_button = $('.regstep_button');
 
-
   var regstep_button_noclick = $('.noclick');
 
 //By default the first step is open
@@ -68,10 +67,11 @@ $(document).ready(function() {
             });
 
             if (error == false) {
+              e.preventDefault();
               $('.regstep_button').removeClass('noclick');
               getStep(e, this, "next");
             }else{
-
+              console.log('Im here')
             }
 
           }else{
