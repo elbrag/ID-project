@@ -596,6 +596,10 @@ ul#menu-items {
   left: 10%;
 }
 
+.reg_content p{
+  font-size: 12pt;
+}
+
 .register_steps {
     margin: 0;
     overflow: hidden;
