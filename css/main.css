@@ -28,6 +28,10 @@ h1 {
   margin: 0 0 30px 0;
 }
 
+h3 {
+  margin: 0;
+}
+
 p {
   margin: 0;
 }
@@ -145,7 +149,8 @@ ul li {
 
 /*form styling*/
 
-form {
+form h3 {
+  text-transform: none;
 }
 
 input[type='text'],
@@ -177,7 +182,9 @@ input[type='submit'] {
   width: 100%;
   font-size: 1.2em;
   border: none;
-  padding: 10px 0;
+  padding: 15px 0;
+  background-color: #6bd367;
+  color: #fff;
   cursor: pointer;
   text-transform: uppercase;
 }
@@ -218,6 +225,11 @@ input[type='text'].error {
   cursor: pointer;
 }
 
+.nextstep, .prevstep {
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
 .reg_step.active .regstep_button {
   background-color: #60C2F4;
   color: #fff;
@@ -241,8 +253,43 @@ input[type='text'].error {
   margin: 55px auto;
 }
 
+#step_1 select {
+  margin-top: 40px;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+#step_1 .reg_content {
+  text-align: center;
+}
+
 div.confirm_button{
   text-align: center;
+}
+
+.regloading {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  will-change: height, opacity;
+  transition: height 0.1s ease-in-out, opacity 0.6s ease-in-out;
+  animation: blink 1.5s linear infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.regloading.loading {
+  visibility: visible;
+  height: 40px;
+  opacity: 1;
+
 }
 
 /*loading wheel taken from https://www.w3schools.com/howto/howto_css_loader.asp 23/5-2018*/
@@ -394,11 +441,11 @@ li.bookmarks1{
 @media (min-width: 640px) {
 
   main {
-    margin-top: 200px;
+    margin-top: 140px;
   }
 
   #loginbox {
-    padding: 50px 40px;
+    padding: 40px 40px 50px 40px;
     width: 85%;
   }
 
@@ -447,14 +494,6 @@ div.mypagelatest-container{
 
 @media (min-width: 960px) {
 
-main {
-  margin-top: 250px;
-}
-
-#loginbox {
-  padding: 50px 40px;
-  width: 50%;
-}
 
 #logocontainer {
   margin-top: 3px;
@@ -503,6 +542,67 @@ main {
     height: 30px;
     margin:  15px 0 15px 5%;
   }
+
+#loginbox {
+  height: 82vh;
+  width: 65%;
+  max-width: 960px;
+}
+
+#register {
+  position: relative;
+}
+
+.regstep_button, .confirm_button {
+  font-size: 0.8em;
+}
+
+.reg_content {
+  position: absolute;
+  left: 10%;
+}
+
+
+    .register_steps {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .reg_step {
+      width: 25%;
+      float: left;
+    }
+
+    #step_1 .reg_content, #step_4 h3 {
+      margin-top: 100px;
+    }
+
+    #step_1 select {
+      margin-bottom: 100px;
+    }
+
+    #step_4 p, #step_4 h3 {
+      text-align: center;
+    }
+
+    #step_1 .nextstep {
+      width: 50%;
+      float: none;
+    }
+
+    .buttoncontainer {
+      width: 100%;
+      margin-top: 30px;
+      overflow: hidden;
+    }
+    .nextstep, .prevstep, input[type='submit'] {
+      width: 45%;
+      margin: 0 2%;
+      float: left;
+    }
+
+
+
 
   div.mypage-container{
     width: 960px;

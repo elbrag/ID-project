@@ -53,7 +53,7 @@
 		                </button>
 
 		                <div class='reg_content'>
-						            <label>Please select your country of work
+						            <label><h3>Please select your country of work</h3>
 													<br>
 						              <select name='country' form='selectcountry' />
 															<option value="Sweden">Sweden</option>
@@ -78,20 +78,23 @@
 		              </button>
 
 		              <div class='reg_content'>
-											<p>Please fill in your details below</p>
+											<h3>Please fill in your details below</h3>
 											<br>
 											<label>First name
 												<input type='text' id='firstname' required='required' />
 												<div class='errormessage'>Please enter your first name</div>
 											</label>
+											<br />
 											<label>Last name
 												<input type='text' id='lastname' required='required' />
 												<div class='errormessage'>Please enter your last name</div>
 											</label>
+											<br />
 											<label>City
 												<input type='text' id='city' required='required' />
 												<div class='errormessage'>Please enter your city</div>
 											</label>
+											<br />
 											<label>Workplace
 												<input type='text' id='workplace' required='required' />
 												<div class='errormessage'>Please enter your workplace</div>
@@ -114,7 +117,7 @@
 		              </button>
 
 		              <div class='reg_content'>
-		                <p>Please check that the following information is correct</p><br /><br />
+		                <h3>Please check that the following information is correct</h3><br /><br />
 										<p class='value_labels'>First name</p> <p class='typed_values' id='firstname_val'></p><br />
 										<p class='value_labels'>Last name</p> <p class='typed_values' id='lastname_val'></p><br />
 										<p class='value_labels'>City</p> <p class='typed_values' id='city_val'></p><br />
@@ -128,10 +131,11 @@
 										<br><br>
 
 										<div class='buttoncontainer'>
-											<button class='prevstep'>< previous step</button>
+											<button class='prevstep'>< change details</button>
 												<input type='submit' value='ok, register' />
 										</div>
 
+										<div class='regloading'>Checking your details...</div>
 		              </div>
 
 		          </li>
@@ -143,8 +147,8 @@
 		              </div>
 
 		              <div class='reg_content'>
-		                <p>Registration successful
-											<br />
+		                <h3>Registration successful</h3>
+											<p>
 											Signing in...
 										</p>
 										<div class="loader"></div>

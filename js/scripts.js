@@ -185,14 +185,23 @@ $("#register").submit( function(e) {
         });
 
         if (error == false) {
-          $('.reg_step.active').removeClass('active');
-          $('#step_4').addClass('active');
 
-          window.setTimeout(function(){
+          $('.regloading').addClass('loading');
 
-              window.location.href = "mypage.html";
+          window.setTimeout(function(){ loadingscreendone() }, 3000);
 
-          }, 3000);
+
+          window.setTimeout(function(){ redirect() }, 6000);
+
+          function loadingscreendone() {
+            $('.regloading').removeClass('loading');
+            $('.reg_step.active').removeClass('active');
+            $('#step_4').addClass('active');
+          }
+          function redirect() {
+            window.location.href = "mypage.html";
+          }
+
 
         }
 
