@@ -218,7 +218,7 @@ input[type='text'].error {
   margin: 0;
 }
 
-.regstep_button, .nextstep, .prevstep, .confirm_button {
+.nextstep, .prevstep {
   width: 100%;
   background-color: #eee;
   border: none;
@@ -227,12 +227,26 @@ input[type='text'].error {
   cursor: pointer;
 }
 
+.stepheader {
+  background-color: #eee;
+  padding: 15px 0;
+  font-size: 1.2em;
+  text-transform: none;
+  text-align: center;
+  font-weight: 400;
+  margin: 0;
+}
+
 .nextstep, .prevstep {
   text-transform: uppercase;
   margin: 5px 0;
 }
 
-.reg_step.active .regstep_button {
+.reg_step {
+  border: 0.5px solid white;
+}
+
+.reg_step.active .stepheader {
   background-color: #60C2F4;
   color: #fff;
 }
@@ -438,6 +452,7 @@ li.latest-item{
   width:20px;
   height:20px;
   margin-top:0px;
+  cursor: pointer;
 }
 
 li.bookmarks1{
@@ -595,7 +610,7 @@ ul#menu-items {
   position: relative;
 }
 
-.regstep_button, .confirm_button {
+.confirm_button {
   font-size: 0.8em;
 }
 
@@ -613,9 +628,13 @@ ul#menu-items {
     overflow: hidden;
 }
 
-.reg_step {
+.reg_step{
     width: 25%;
     float: left;
+}
+
+.stepheader {
+  font-size: 0.8em;
 }
 
 #step_1 .reg_content, #step_4 h3 {

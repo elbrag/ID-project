@@ -28,68 +28,68 @@ $(document).ready(function() {
 //accordion for registration steps: https://www.w3schools.com/howto/howto_js_accordion.asp 20/5-2018
   var i;
   var regstep = $('.reg_step');
-  var regstep_button = $('.regstep_button');
+  // var regstep_button = $('.regstep_button');
 
-  var regstep_button_noclick = $('.noclick');
+  // var regstep_button_noclick = $('.noclick');
 
 //By default the first step is open
   regstep.first().addClass('active');
 
 
 //when we click the blue tab, run the function
-  regstep_button.click(openAcc);
-
-//accordion function for clicking on tabs:
-    function openAcc(e){
-
-          e.preventDefault();
-          //prevent to click step 3 if no fill
-          if(regstep_button.hasClass("noclick")){
-            e.preventDefault();
-            var error = false;
-            field.removeClass("error");
-
-            //go through all required fields and run this function:
-            field.each(function() {
-
-              //the value of the fields:
-              var fieldval = $(this).val();
-
-              //if field values are not filled in, you can't leave this step (step 2)
-              if( fieldval == undefined || fieldval == null || fieldval == "" )  {
-                $('.reg_step.active').removeClass('active');
-                $('#step_2').addClass('active');
-                $(this).addClass("error");
-                error = true;
-              }
-            });
-
-            /*If we have gotten an error on a form field, clicking it and then leaving it again removes the error message, giving the user a new chance*/
-            field.click(function() {
-              if ($(this).hasClass('error')) {
-                $(this).blur( function() {
-                    $(this).removeClass("error");
-                });
-              };
-            });
-
-            /*The variable error is our check, since it increments when there are field errors. If it is false, we're good to go to the next step */
-            if (error == false) {
-              e.preventDefault();
-              $('.regstep_button').removeClass('noclick');
-              getStep(e, this, "next");
-
-            }else{
-              console.log('Im here')
-            }
-
-          }else{
-            regstep.removeClass('active');
-            this.closest('li').classList.toggle("active");
-          }
-
-
-      }
+//   regstep_button.click(openAcc);
+//
+// //accordion function for clicking on tabs:
+//     function openAcc(e){
+//
+//           e.preventDefault();
+//           //prevent to click step 3 if no fill
+//           if(regstep_button.hasClass("noclick")){
+//             e.preventDefault();
+//             var error = false;
+//             field.removeClass("error");
+//
+//             //go through all required fields and run this function:
+//             field.each(function() {
+//
+//               //the value of the fields:
+//               var fieldval = $(this).val();
+//
+//               //if field values are not filled in, you can't leave this step (step 2)
+//               if( fieldval == undefined || fieldval == null || fieldval == "" )  {
+//                 $('.reg_step.active').removeClass('active');
+//                 $('#step_2').addClass('active');
+//                 $(this).addClass("error");
+//                 error = true;
+//               }
+//             });
+//
+//             /*If we have gotten an error on a form field, clicking it and then leaving it again removes the error message, giving the user a new chance*/
+//             field.click(function() {
+//               if ($(this).hasClass('error')) {
+//                 $(this).blur( function() {
+//                     $(this).removeClass("error");
+//                 });
+//               };
+//             });
+//
+//             /*The variable error is our check, since it increments when there are field errors. If it is false, we're good to go to the next step */
+//             if (error == false) {
+//               e.preventDefault();
+//               $('.regstep_button').removeClass('noclick');
+//               getStep(e, this, "next");
+//
+//             }else{
+//               console.log('Im here')
+//             }
+//
+//           }else{
+//             regstep.removeClass('active');
+//             this.closest('li').classList.toggle("active");
+//           }
+//
+//
+//       }
 
 //--------------accordion function for next and previous buttons below
 
@@ -139,12 +139,12 @@ valbut.on('click', function(e){
     };
   });
 
-  if (error == false) {
-    $('.regstep_button').removeClass('noclick');
-    getStep(e, this, "next");
-  }else{
-
-  }
+  // if (error == false) {
+  //   $('.regstep_button').removeClass('noclick');
+  //   getStep(e, this, "next");
+  // }else{
+  //
+  // }
 });
 
 //the function that runs after clicking the next/prev buttons
