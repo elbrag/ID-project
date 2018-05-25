@@ -281,11 +281,11 @@ $("#register").submit( function(e) {
 
       // @FREDRIK -- here we want to slide the divs left or right depending on the arrow clicked but it only works once for one arrow the you have to refresh the page. Why?
       //slide links on arrow clicked
-      $("a.arrow-right").on("click", function(e) {
-        $(".mypagelink").addClass("slide-right");
-      });
+    //  $("a.arrow-right").on("click", function(e) {
+  //    $(".mypagelink").addClass("slide-right");
+    //  });
 
-      $("a.arrow-left").on("click", function(e) {
-        $(".mypagelink").addClass("slide-left");
-      });
+    //  $("a.arrow-left").on("click", function(e) {
+    //    $(".mypagelink").addClass("slide-left");
+    //  });
 });
