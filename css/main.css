@@ -342,6 +342,10 @@ div.mypage-container{
   color:black;
 }
 
+.mypage-container h1 a:hover{
+  color:#1B9CE5;
+}
+
 /* My Page Options  */
 div.mypagelink-container{
   position: relative;
@@ -366,13 +370,10 @@ i.fas.fa-angle-right{
 }
 
 
-/* @FREDRIK */
-/* my page links
+/* my page links */
 ul.mypagelink{
-  width: 700px;
-  overflow: hidden;
-  /* transform: translateX(0px);
-} */
+  height:200px;
+}
 
 ul.mypagelink>a {
   font-size:12pt;
@@ -391,6 +392,9 @@ ul.mypagelink>a>li{
   box-shadow: 1px 1px rgba(51,51,51, 0.2);
 }
 
+ul.mypagelink >a>li:hover {
+  transform: scale(1.1);
+}
 
 /* My Page Latest News */
 div.mypagelatest-container{
@@ -408,6 +412,10 @@ li.latest-item{
   margin-top: 15px;
   opacity: 1;
   width:300px;
+}
+
+.trash:hover{
+  transform: scale(1.3);
 }
 
 .mypage-container h4 {
@@ -442,7 +450,7 @@ li.bookmarks1{
 @media (min-width: 640px) {
 
   main {
-    margin-top: 140px;
+    margin: 140px 0;
   }
 
   h3 {
@@ -578,7 +586,7 @@ ul#menu-items {
   }
 
 #loginbox {
-  height: 82vh;
+  height: 120vh;
   width: 65%;
   max-width: 960px;
 }
